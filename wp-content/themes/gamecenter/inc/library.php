@@ -254,32 +254,6 @@
 			}
 		}
 		
-		function block_social () {
-			global $post; ?>
-			<div id='smthemes_share' top="100" bottom="283">
-			<ul class='inner'>
-				<?php
-					$href=get_bloginfo('url').$_SERVER['REQUEST_URI'];
-					$this->pagetitle;
-					$services=$this->get( 'social', 'socials' );
-					$img='';
-					if (is_single()) {$img=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'medium');$img=$img[0];}
-					if ($img=='')$img=$this->get( 'general', 'logoimage' );
-					foreach ($services as $service) {
-						if ($service['show']) {
-							$code=preg_replace('/smt_social_url/', $href, $service['code']);
-							$code=preg_replace('/smt_social_title/', $this->pagetitle, $code);
-							$code=preg_replace('/smt_social_desc/', $this->pagetitle, $code);
-							$code=preg_replace('/smt_social_img_url/', $img, $code);
-							echo "<li>".$code."</li>";
-						}
-					}
-				?>
-			</ul>
-			</div>
-			<?php
-		}
-		
 		function block_logo() {
 			if ($this->get( 'general', 'logosource' )==1&&$this->get( 'general', 'logoimage' )!='') { ?>
 				<a href='<?php echo home_url(); ?>/'><img src='<?php echo $this->get( 'general', 'logoimage' )?>' class='logo' alt='<?php echo bloginfo( 'name' ); ?>' title="<?php echo bloginfo( 'name' ); ?>" /></a>
