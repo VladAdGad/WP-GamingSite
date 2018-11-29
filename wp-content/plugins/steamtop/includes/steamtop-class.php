@@ -26,12 +26,9 @@ class Steam_Top_Widget extends WP_Widget {
     public function widget( $args, $instance ) {
         echo $args['before_widget'];
 
-
         if ( ! empty( $instance['title'] ) ) {
             echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
         }
-
-
 
         echo '<table id="games">
                 <tbody>
@@ -41,19 +38,22 @@ class Steam_Top_Widget extends WP_Widget {
 						<td align="left"><h3><b>Game</b></h3></td>
 					</tr>
 				';
-        $html = file_get_contents("https://store.steampowered.com/stats");
+        $html = file_get_contents('https://store.steampowered.com/stats');
         $doc = phpQuery::newDocument($html);
+		$string = file_get_contents(plugin_dir_path(__FILE__). '/games.json');
+        $json = json_decode($string, true);
         $counter = 0;
         foreach($doc->find('.player_count_row') as $game) {
             if ($counter < $instance['numOfGames']) {
                 $game = pq($game);
                 echo '<tr class="player_count_row">
 							<td align="right">
-								<span class="currentServers">' . $game->find("td:eq(0)")->text() . '</span>
+								<span class="currentServers">' . $game->find('td:eq(0)')->text() . '</span>
 							</td>
 							<td width="20">&nbsp;</td>
-							<td>
-								<a class="gameLink" href="' . $game->find(".gameLink")->attr("href") . '">' . $game->find(".gameLink")->text() . '</a>
+							<td class="showhim">
+								<a class="gameLink" href="' . $game->find('.gameLink')->attr('href') . '" target="_blank">' . $game->find('.gameLink')->text() . '</a>
+								<span class="game"><img class="gameIcon" src="' . $json[$game->find('.gameLink')->attr('href')]['IMGlink'] . '"/>' . $json[$game->find('.gameLink')->attr('href')]['description'] . '</span>
 							</td>
 						</tr>';
                 $counter++;
@@ -61,13 +61,11 @@ class Steam_Top_Widget extends WP_Widget {
                 break 1;
             }
         }
-            echo '</tbody>
+        echo '</tbody>
               </table>';
-
 
         echo $args['after_widget'];
     }
-
 
     /**
      * Back-end widget form.
@@ -98,7 +96,7 @@ class Steam_Top_Widget extends WP_Widget {
         <!-- Number of games to show -->
         <p>
             <label for="<?php echo $this->get_field_id( 'numOfGames' ); ?>">
-                <?php _e( 'Number of games to show:' ); ?>
+                <?php esc_attr_e( 'Number of games to show:' ); ?>
             </label>
             <input class="tiny-text"
                    id="<?php echo $this->get_field_id( 'numOfGames' ); ?>"
@@ -106,12 +104,13 @@ class Steam_Top_Widget extends WP_Widget {
                    type="number"
                    step="1"
                    min="1"
-                   max="100"
+                   max="99"
                    value="<?php echo esc_attr($numOfGames); ?>"
             />
         </p>
         <?php
     }
+
 
     /**
      * Sanitize widget form values as they are saved.
