@@ -3,7 +3,7 @@ Contributors: machothemes, silkalns
 Tags: best gallery plugin, image gallery, photo gallery, responsive gallery, wordpress gallery plugin, wordpress portfolio plugin, masonry gallery, fancy gallery, media gallery, mosaic gallery, polaroid gallery, portfolio gallery
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 1.3.3
+Stable tag: 1.3.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -143,6 +143,14 @@ If you get blurry and pixellated images then you need to raise the "Minimum imag
 
 The PRO license bundles 6 different lightboxes. However you can use any other lightbox you want also with the Lite license. If you have installed a lightbox plugin then you just need to select "Direct link to image" in the "Lightbox" settings.
 
+= How can I change the lightbox's background? =
+
+You can change the lightbox popup background color using the following code:
+
+  `body .lg-backdrop {
+    background-color: white;
+    }`
+
 = How can I get support? =
 
 Free support is included only with a PRO license: [Buy Modula PRO](https://wp-modula.com/#buy "Buy Modula PRO")
@@ -164,6 +172,18 @@ Free support is included only with a PRO license: [Buy Modula PRO](https://wp-mo
 7. Admin panel with Material design
 
 == Changelog ==
+
+= 1.3.7 =
+* fixed dismiss button from beta testing notice.
+
+= 1.3.6 =
+* removed custom js field.
+
+= 1.3.5 =
+* second wp.org review
+
+= 1.3.4 =
+* wp.org review
 
 = 1.3.3 =
 * Added notification for Modula 2.0
