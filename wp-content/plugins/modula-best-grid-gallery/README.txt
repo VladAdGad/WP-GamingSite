@@ -2,8 +2,8 @@
 Contributors: machothemes, silkalns
 Tags: best gallery plugin, image gallery, photo gallery, responsive gallery, wordpress gallery plugin, wordpress portfolio plugin, masonry gallery, fancy gallery, media gallery, mosaic gallery, polaroid gallery, portfolio gallery
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 1.3.7
+Tested up to: 5.0
+Stable tag: 2.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,18 +13,9 @@ Photo Gallery by Modula - an advanced solution for Photo Gallery users. Create b
 
 Modula Image Gallery is a creative and original WordPress plugin perfect for creating custom, unique, and responsive image galleries. Modula is available in both a Lite/free version and a premium version and it is currently the easiest and fastest photo gallery plugin for WordPress. Directly from its dashboard you are able to build stunning galleries in a few seconds, unlike many other WordPress plugins.
 
-= Try Modula 2.0 Beta =
-
-We’ve been working on an awesome update to Modula over the last few months and can’t wait to release it to the public. But, before that can happen, we need the help of amazing users in the WordPress community (just like you) to improve Modula 2.0’s first beta. You can download our new plugin from <a href="https://machothemes.com/downloads/modula-2.0.0.zip" target="_blank">here</a>.
-
-Below is a video that showcases the new features of Modula 2.0.
-
-https://www.youtube.com/watch?v=NxrTXQNExh4
-
 = See a 60s video of Modula in action =
 
-https://www.youtube.com/watch?v=tq8yUYxgtnA
-
+https://www.youtube.com/watch?v=NxrTXQNExh4
 
 > **Time-saving features available in the FULL version:**
 >
@@ -163,15 +154,27 @@ Free support is included only with a PRO license: [Buy Modula PRO](https://wp-mo
 
 == Screenshots ==
 
-1. Gallery with Appear effect
-2. Gallery with Crafty effect and round corners
-3. Gallery with Catinelle effect
-4. Gallery with Appear effect
-5. Gallery with Pufrobo effect
-6. Lightgallery lightbox
-7. Admin panel with Material design
+1. Custom Grid - Freely resize images
+2. Custom Grid - Helper Grid
+3. Back-end Options UI Walkthrough
+4. Responsive galleries created with Modula
 
 == Changelog ==
+
+= 2.0.2 =
+* Changed strings
+* Fixed open new tab checkbox
+* Fixed caption color
+* Fixed caption & title size
+* Fixed custom grid layout
+
+= 2.0.1 - 12.17.2018 =
+* Major Update
+* Build Custom Grids - Take full control of your galleries.
+* New Admin Interface - For a more intuitive user interface, we’ve blended Modula right into WordPress.
+* Drag & Drop to Upload Images
+* Guidelines to Help You Make the Perfect Gallery
+* Preview your Gallery Without the Hassle
 
 = 1.3.7 =
 * fixed dismiss button from beta testing notice.
